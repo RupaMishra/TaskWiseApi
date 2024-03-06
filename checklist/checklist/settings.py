@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
     'core.apps.CoreConfig',
     'accounts.apps.AccountsConfig',
+    'checklist'
 ]
 
 MIDDLEWARE = [
@@ -79,10 +80,23 @@ WSGI_APPLICATION = 'checklist.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'djongo',
+        'NAME': 'taskWise',
+        'ENFORCE_SCHEMA': False,
+        'CLIENT': {
+            'host': 'mongodb+srv://Avinash:V6aV8TPHgsMOyGyL@cluster0.y9vvpzh.mongodb.net/taskWise?retryWrites=true&w=majority',
+            'tls': True,
+            'tlsAllowInvalidCertificates': True,  # This option disables certificate verification
+        }  
     }
 }
 
