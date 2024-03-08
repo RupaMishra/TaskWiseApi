@@ -16,11 +16,7 @@
     ],
     "routes":[
         {
-            "src":"/static/(.*)",
-            "dest":"/static/$1"
-        },
-        {
-            "src":"/static/(.*)",
+            "src":"/(.*)",
             "dest":"checklist/checklist/wsgi.py"
         }
     ]
