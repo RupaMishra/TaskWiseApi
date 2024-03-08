@@ -25,7 +25,7 @@ SECRET_KEY = 'i$!w#21pkcrq33e#(=l%$^orpv@7m^16@%*w93fmu2khe8)p67'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app','.now.sh']
 
 
 # Application definition
@@ -100,7 +100,6 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -155,3 +154,6 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
 }
+import os
+STATICFILES_DIRS = os.path.join(BASE_DIR,'static')
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles_build','static')
