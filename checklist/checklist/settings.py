@@ -25,7 +25,7 @@ SECRET_KEY = 'i$!w#21pkcrq33e#(=l%$^orpv@7m^16@%*w93fmu2khe8)p67'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app','.now.sh']
+ALLOWED_HOSTS = ['*','192.168.1.36','http://settings.py']
 
 
 # Application definition
@@ -80,25 +80,25 @@ WSGI_APPLICATION = 'checklist.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'taskWise',
-        'ENFORCE_SCHEMA': False,
-        'CLIENT': {
-            'host': 'mongodb+srv://Avinash:V6aV8TPHgsMOyGyL@cluster0.y9vvpzh.mongodb.net/taskWise?retryWrites=true&w=majority',
-            'tls': True,
-            'tlsAllowInvalidCertificates': True,  # This option disables certificate verification
-        }  
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'djongo',
+#         'NAME': 'taskWise',
+#         'ENFORCE_SCHEMA': False,
+#         'CLIENT': {
+#             'host': 'mongodb+srv://Avinash:V6aV8TPHgsMOyGyL@cluster0.y9vvpzh.mongodb.net/taskWise?retryWrites=true&w=majority',
+#             'tls': True,
+#             'tlsAllowInvalidCertificates': True,  # This option disables certificate verification
+#         }  
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -154,6 +154,6 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
 }
-import os
-STATICFILES_DIRS = os.path.join(BASE_DIR,'static')
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles_build','static')
+# import os
+# STATICFILES_DIRS = os.path.join(BASE_DIR,'static')
+# STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles_build','static')
